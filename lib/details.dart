@@ -1,7 +1,4 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lamp_ecommerce_flutter/global.dart';
 
 class Details extends StatefulWidget {
@@ -94,116 +91,119 @@ class _DetailsState extends State<Details> {
                 child: Column(
                   children: <Widget>[
                     Expanded(
-                      child: Container(
-                        padding:
-                            EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Center(
-                              child: Container(
-                                width: MediaQuery.of(context).size.width / 5,
-                                height: 5,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  color: Colors.white24,
+                      child: SingleChildScrollView(
+                        child: Container(
+                          padding: EdgeInsets.only(
+                              top: 15.0, left: 15.0, right: 15.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Center(
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width / 5,
+                                  height: 5,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15),
+                                    color: Colors.white24,
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Text(products[1]["productName"],
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 17)),
-                                    SizedBox(
-                                      height: 5.0,
-                                    ),
-                                    Text(products[1]["price"],
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 17,
-                                            fontWeight: FontWeight.bold)),
-                                  ],
-                                ),
-                                Spacer(),
-                                Container(
-                                  padding: EdgeInsets.all(15.0),
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: accent,
-                                    boxShadow: [
-                                      BoxShadow(
-                                          color: accent,
-                                          offset: Offset(0, 3),
-                                          blurRadius: 5.0)
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(products[1]["productName"],
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 17)),
+                                      SizedBox(
+                                        height: 5.0,
+                                      ),
+                                      Text(products[1]["price"],
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 17,
+                                              fontWeight: FontWeight.bold)),
                                     ],
                                   ),
-                                  child: Icon(
-                                    Icons.favorite,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 9.0,
-                            ),
-                            Row(
-                              children: List<Widget>.generate(
-                                4,
-                                (f) {
-                                  return Expanded(
-                                    child: Container(
-                                      margin: EdgeInsets.all(5.0),
-                                      padding: EdgeInsets.all(9.0),
-                                      decoration: BoxDecoration(
-                                        color: Colors.white12,
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      child: Column(
-                                        children: <Widget>[
-                                          icons[f],
-                                          Text(
-                                            productSpecifications[f]["value"],
-                                            style: TextStyle(
-                                                fontSize: 17,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          SizedBox(
-                                            height: 5.0,
-                                          ),
-                                          Text(
-                                            productSpecifications[f]["type"],
-                                            style: TextStyle(
-                                              // fontSize: 17,
-                                              color: Colors.white54,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
+                                  Spacer(),
+                                  Container(
+                                    padding: EdgeInsets.all(15.0),
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: accent,
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color: accent,
+                                            offset: Offset(0, 3),
+                                            blurRadius: 5.0)
+                                      ],
                                     ),
-                                  );
-                                },
+                                    child: Icon(
+                                      Icons.favorite,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ),
-                            SizedBox(
-                              height: 9,
-                            ),
-                            Expanded(
-                              child: Text(
+                              SizedBox(
+                                height: 9.0,
+                              ),
+                              Row(
+                                children: List<Widget>.generate(
+                                  4,
+                                  (f) {
+                                    return Expanded(
+                                      child: Container(
+                                        margin: EdgeInsets.all(5.0),
+                                        padding: EdgeInsets.all(9.0),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white12,
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                        ),
+                                        child: Column(
+                                          children: <Widget>[
+                                            icons[f],
+                                            Text(
+                                              productSpecifications[f]["value"],
+                                              style: TextStyle(
+                                                  fontSize: 17,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: 5.0,
+                                            ),
+                                            Text(
+                                              productSpecifications[f]["type"],
+                                              style: TextStyle(
+                                                // fontSize: 17,
+                                                color: Colors.white54,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                              SizedBox(
+                                height: 9,
+                              ),
+                              Text(
                                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. A saepe velit soluta molestiae tempore accusamus voluptates repudiandae explicabo voluptas vitae non illo rerum aperiam earum et ullam, enim laudantium facere!",
                                 style: TextStyle(
                                     color: Colors.white54, height: 1.2),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -248,7 +248,9 @@ class _DetailsState extends State<Details> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 15,)
+                              SizedBox(
+                                height: 15,
+                              )
                             ],
                           ),
                           Spacer(),
@@ -288,7 +290,8 @@ class _DetailsState extends State<Details> {
 class PageIndicators extends StatelessWidget {
   final int itemCount;
 
-  const PageIndicators({Key key, this.itemCount}) : super(key: key);
+  const PageIndicators({super.key, required this.itemCount});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

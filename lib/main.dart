@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: darkBg,
-        accentColor: accent,
         fontFamily: 'Raleway',
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: accent),
       ),
       home: Home(),
       routes: {
@@ -233,7 +233,8 @@ class MyBottomNavBar extends StatelessWidget {
 class MyProductContainer extends StatelessWidget {
   final int id;
 
-  const MyProductContainer({Key key, this.id}) : super(key: key);
+  const MyProductContainer({super.key, required this.id});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
